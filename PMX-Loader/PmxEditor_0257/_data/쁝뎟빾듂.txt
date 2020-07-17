@@ -1,0 +1,192 @@
+僙儞僞乕, center
+忋敿恎, upper body
+庱, neck
+摢, head
+嵍栚, eye_L
+塃栚, eye_R
+慜敮俁, front hair3
+慜敮俀, front hair2
+慜敮侾, front hair1
+屻敮, back hair
+壓敿恎, lower body
+嵍尐, shoulder_L
+嵍榬, arm_L
+嵍傂偠, elbow_L
+嵍庤庱, wrist_L
+嵍恊巜侾, thumb1_L
+嵍恊巜俀, thumb2_L
+嵍恖巜侾, fore1_L
+嵍恖巜俀, fore2_L
+嵍恖巜俁, fore3_L
+嵍拞巜侾, middle1_L
+嵍拞巜俀, middle2_L
+嵍拞巜俁, middle3_L
+嵍栻巜侾, third1_L
+嵍栻巜俀, third2_L
+嵍栻巜俁, third3_L
+嵍彫巜侾, little1_L
+嵍彫巜俀, little2_L
+嵍彫巜俁, little3_L
+塃尐, shoulder_R
+塃榬, arm_R
+塃傂偠, elbow_R
+塃庤庱, wrist_R
+塃恊巜侾, thumb1_R
+塃恊巜俀, thumb2_R
+塃恖巜侾, fore1_R
+塃恖巜俀, fore2_R
+塃恖巜俁, fore3_R
+塃拞巜侾, middle1_R
+塃拞巜俀, middle2_R
+塃拞巜俁, middle3_R
+塃栻巜侾, third1_R
+塃栻巜俀, third2_R
+塃栻巜俁, third3_R
+塃彫巜侾, little1_R
+塃彫巜俀, little2_R
+塃彫巜俁, little3_R
+嵍咸装侾, muffler1_L
+嵍咸装俀, muffler2_L
+嵍咸装俁, muffler3_L
+嵍咸装係, muffler4_L
+塃咸装侾, muffler1_R
+塃咸装俀, muffler2_R
+塃咸装俁, muffler3_R
+塃咸装係, muffler4_R
+嵍悶侾, hem1_L
+嵍悶俀, hem2_L
+塃悶侾, hem1_R
+塃悶俀, hem2_R
+嵍懌, leg_L
+嵍傂偞, knee_L
+嵍懌庱, ankle_L
+塃懌, leg_R
+塃傂偞, knee_R
+塃懌庱, ankle_R
+椉栚, eyes
+嵍咸装俆, muffler5_L
+塃咸装俆, muffler5_R
+嵍偮傑愭, toe_L
+塃偮傑愭, toe_R
+嵍咸装俬俲, muffler IK_L
+塃咸装俬俲, muffler IK_R
+嵍懌俬俲, leg IK_L
+塃懌俬俲, leg IK_R
+嵍偮傑愭俬俲, toe IK_L
+塃偮傑愭俬俲, toe IK_R
+恀柺栚, serious
+崲傞, sadness
+偵偙傝, cheerful
+搟傝, anger
+忋, go up
+壓, go down
+傑偽偨偒, blink
+徫偄, smile
+僂傿儞僋, wink
+僂傿儞僋俀, wink2
+僂傿儞僋塃, wink_R
+敞莞俀塃, wink2_R
+偼偅, close><
+側偛傒, calm
+傃偭偔傝, surprise
+摰彫, pupil
+偁, a
+偄, i
+偆, u
+偍, o
+仯, triangle
+亣, infinity
+帟忋壓, teeth
+偵傗傝, grin
+俬俲, IK
+懱(忋), Body[u]
+敮, Hair
+榬, Arms
+巜, Fingers
+懱(壓), Body[l]
+懌, Legs
+无拜01, bone01
+无拜02, bone02
+无拜03, bone03
+无拜04, bone04
+无拜05, bone05
+无拜06, bone06
+无拜07, bone07
+无拜08, bone08
+无拜09, bone09
+无拜10, bone10
+无拜11, bone11
+无拜12, bone12
+无拜13, bone13
+无拜14, bone14
+无拜15, bone15
+嫻儕儃儞, chest ribbon
+嵍儕儃儞, ribbon_L
+塃儕儃儞, ribbon_R
+崢忺傝, waist accessory
+嵍敮, hair_L
+塃敮, hair_R
+慜敮, front hair
+嵍僙乕儔, blouse_L
+塃僙乕儔, blouse_R
+嵍懗, sleeve_L
+塃懗, sleeve_R
+雀啦侾, necktie1
+雀啦俀, necktie2
+雀啦俁, necktie3
+嵍僙乕儔乕, blouse_L
+塃僙乕儔乕, blouse_R
+雀啦愭, necktie4
+雀啦俬俲, necktie IK
+嵍蕉澳慜, front skirt_L
+嵍蕉澳屻, back skirt_L
+塃蕉澳慜, front skirt_R
+塃蕉澳屻, back skirt_R
+僂傿儞僋俴, wink_L
+偊, e
+傋乕, tongue
+傾儂栄侾, aho hear1
+傾儂栄俀, aho hair2
+億僯僥侾, back hair1
+億僯僥俀, back hair2
+億僯僥俁, back hair3
+億僯僥係, back hair4
+億僯僥俆, back hair5
+嵍嫻, bust_L
+塃嫻, bust_R
+億僯僥俇, back hair6
+億僯僥俬俲, hair IK
+嵍敮侾, hair1_L
+嵍敮俀, hair2_L
+嵍敮俁, hair3_L
+嵍敮係, hair4_L
+嵍敮俆, hair5_L
+嵍敮俇, hair6_L
+嵍榬潃, arm twist_L
+嵍庤潃, wrist twist_L
+塃敮侾, hair1_R
+塃敮俀, hair2_R
+塃敮俁, hair3_R
+塃敮係, hair4_R
+塃敮俆, hair5_R
+塃敮俇, hair6_R
+塃榬潃, arm twist_R
+塃庤潃, wrist twist_R
+嵍栚岝, eyelight_L
+塃栚岝, eyelight_R
+雀啦係, necktie4
+嵍敮俈, hair7_L
+塃敮俈, hair7_R
+嵍敮俬俲, hair IK_L
+塃敮俬俲, hair IK_R
+偠偲栚, doubt
+側偸両, confuse
+伻, regret
+冎, omega
+冎仩, omegabox
+偼傫偭両, fool
+傌傠偭, tongue
+偊乕, e-
+僴僱栄, hane hair
+実懷, phone
+傊偺帤, regret
