@@ -16,6 +16,7 @@ import os
 import numpy as np
 import pygame as pg
 import opengl
+import bone
 
 DISPLAY_X = 1280
 DISPLAY_Y = 760
@@ -42,8 +43,11 @@ class Model_Load:
         self.model = self.__load(path)
         self.model_bone = self.__bone_load(path)
 
+        if self.model_bone == []:
+            print("Bone list empty.")
+        
         if not self.model:
-            print('Fail to load')
+            print('Fail to load.')
             return
         print("Load complete : {0}".format(path))
 
@@ -92,13 +96,33 @@ class Model_Load:
         else:
             print("Unknown file format : {0}".format(path))
             return
-        for i in range(len(model.bones)):
-            print(model.bones[i].name)
         
+        bone_temp = []
+        main_bone_position = []
+
+        for i in range(len(model.bones)):
+            if model.bones[i].name in bone.main_bone_info():
+                print("{0} : {1}".format(model.bones[i].name, str(model.bones[i].position)))
+                bone_temp.append(model.bones[i].name)
+                main_bone_position.append(model.bones[i].position)
+
+        if len(bone_temp) - len(bone.main_bone_info()) != 0:
+            print("can't find : {0}".format(list(set(bone.main_bone_info()) - set(bone_temp))))
+
+        return main_bone_position
 
     def draw(self):
         self.model.draw()
 
+    def draw_bone(self):
+        glDepthFunc(GL_ALWAYS)
+        glColor3f(0, 0, 1)
+        glPointSize(10.0)
+        for i in range(len(self.model_bone)):
+            glBegin(GL_POINTS)
+            glVertex3f(self.model_bone[i].x, self.model_bone[i].y, self.model_bone[i].z-0.5)
+            glEnd()
+        glDepthFunc(GL_LESS)
 def main(display=(DISPLAY_X, DISPLAY_Y)):
         
     tx = 0
@@ -108,7 +132,7 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     ry = 180
     zoom = 0.1
 
-    path = "ashe/Ashe.pmx"
+    path = "miku/miku.pmx"
     model_load = Model_Load(path)
     scene_load = Scene()
     grid_load = opengl.drawgrid.Grid(100)
@@ -155,11 +179,11 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
                     zoom += -0.01
                     if zoom < 0.01:
                         zoom = 0.01
-        """if ry > 0:
+        if ry > 0:
             ry -= 3
         else:
             ry = 360
-        """
+        
         glLoadIdentity()
 
         glScalef(zoom, zoom, zoom)
@@ -169,6 +193,7 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
         model_load.draw()
+        model_load.draw_bone()
         scene_load.draw()
         grid_load.draw()
 

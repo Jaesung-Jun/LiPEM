@@ -1,7 +1,7 @@
 from OpenGL.GL import *
 import pymeshio
 
-class Bone:    
+def main_bone_info():    
     #머리
     HEAD = "首"
 
@@ -29,7 +29,8 @@ class Bone:
     RIGHT_KNEE = "右ひざ"
     RIGHT_ANKLE = "右足首"
     
-    #pymeshio.englishmap.boneMap[]
-
-    def __init__(self, model):
-        pass
+    main_bone = [HEAD, LEFT_ARM, LEFT_ELBOW, LEFT_WRIST, 
+                RIGHT_ARM, RIGHT_ELBOW, RIGHT_WRIST, 
+                LEFT_FOOT, LEFT_KNEE, LEFT_ANKLE, 
+                RIGHT_FOOT, RIGHT_KNEE, RIGHT_ANKLE]
+    return main_bone
