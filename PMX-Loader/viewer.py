@@ -4,6 +4,8 @@ import opengl.material
 import opengl.texture
 import opengl.vertexarray
 import opengl.coord
+import opengl.drawgrid
+
 from OpenGL.arrays import vbo
 from OpenGL.GL import shaders
 from OpenGL.GL import *
@@ -15,14 +17,19 @@ import numpy as np
 import pygame as pg
 import opengl
 
-DISPLAY_X = 800
-DISPLAY_Y = 800
+DISPLAY_X = 1280
+DISPLAY_Y = 760
+VIEWPORT_X = 3
+VIEWPORT_Y = 3
 
 class Scene:
 
-    def __init__(self):
-        self.items = []
-        self.coord=opengl.coord.Coord(50)
+    def __init__(self, items=[]):
+        """
+        items : pmx(or pmd etc.)builder.build() Instance
+        """
+        self.items = items
+        self.coord=opengl.coord.Coord(100)
 
     def draw(self):
         self.coord.draw()
@@ -37,7 +44,7 @@ class Model_Load:
             return
         print(self.model)
 
-    def view(self):
+    def draw(self):
         self.model.draw()
 
 def main(display=(DISPLAY_X, DISPLAY_Y)):
@@ -49,9 +56,11 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     ry = 180
     zoom = 0.1
 
-    path = "Ashe/Ashe.pmx"
+    path = "miku/miku.pmx"
     model_load = Model_Load(path)
     scene_load = Scene()
+    grid_load = opengl.drawgrid.Grid(100)
+    
     pg.init()
     clock = pg.time.Clock()
     screen = pg.display.set_mode(display, pg.OPENGL | pg.DOUBLEBUF)
@@ -59,6 +68,13 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     glClearColor(150, 150, 150, 0)
     
     gluPerspective(60.0, DISPLAY_Y/DISPLAY_X, 1.0, 20.0)
+    
+    #View
+    glViewport(0, 0, display[0], display[1])
+    glMatrixMode(GL_PROJECTION)
+    aspect = display[0]/display[1]
+    glOrtho(-aspect, aspect, -1, 1, -1, 1);
+    glMatrixMode(GL_MODELVIEW)
 
     glEnable(GL_DEPTH_TEST)
     glClearDepth(1.0)
@@ -100,8 +116,9 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
         glTranslatef(tx, ty, tz)
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
-        model_load.view()
+        model_load.draw()
         scene_load.draw()
+        grid_load.draw()
 
         pg.display.flip()
         clock.tick(30)

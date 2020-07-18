@@ -57,7 +57,7 @@ class BaseController(object):
         # OpenGLバッファのクリア
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
-        #self.shader.draw()
+        self.shader.draw()
 
         # 投影行列のクリア
         glMatrixMode(GL_PROJECTION)
