@@ -9,13 +9,7 @@ import opengl.texture
 import opengl.vertexarray
 
 
-def build(path):
-    t=time.time()
-    model=pymeshio.pmx.reader.read_from_file(path)
-    if not model:
-        return
-    print(time.time()-t, "sec")
-
+def build(path, model):
     # build
     basedir=os.path.dirname(path)
     indexedVertexArray=opengl.vertexarray.IndexedVertexArray()

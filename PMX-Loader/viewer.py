@@ -38,11 +38,63 @@ class Scene:
 class Model_Load:
 
     def __init__(self, path):
-        self.model = pmxbuilder.build(path)
+        
+        self.model = self.__load(path)
+        self.model_bone = self.__bone_load(path)
+
         if not self.model:
-            print('fail to load')
+            print('Fail to load')
             return
-        print(self.model)
+        print("Load complete : {0}".format(path))
+
+    def __load(self, path):
+
+        print("Loading....")
+
+        if path.lower().endswith(".mqo"):
+            model=pymeshio.mqo.reader.read_from_file(path)
+            if not model:
+                return
+            return xbuilder.build(path, model)
+
+        elif path.lower().endswith(".pmd"):
+            model=pymeshio.pmd.reader.read_from_file(path)
+            if not model:
+                return
+            return xbuilder.build(path, model)
+
+        elif path.lower().endswith(".pmx"):
+            model=pymeshio.pmx.reader.read_from_file(path)
+            if not model:
+                return
+            return pmxbuilder.build(path, model)
+
+        elif path.lower().endswith(".x"):
+            model=pymeshio.x.reader.read_from_file(path)
+            if not model:
+                return
+            return xbuilder.build(path, model)
+        else:
+            print("Unknown file format : {0}".format(path))
+
+    def __bone_load(self, path):
+
+        if path.lower().endswith(".pmd"):
+            model=pymeshio.pmd.reader.read_from_file(path)
+            if not model:
+                return
+
+        elif path.lower().endswith(".pmx"):
+            model=pymeshio.pmx.reader.read_from_file(path)
+            if not model:
+                return
+
+        else:
+            print("Unknown file format : {0}".format(path))
+            return
+        for i in range(len(model.bones)):
+            print(model.bones[i].name)
+        
 
     def draw(self):
         self.model.draw()
@@ -56,7 +108,7 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     ry = 180
     zoom = 0.1
 
-    path = "miku/miku.pmx"
+    path = "ashe/Ashe.pmx"
     model_load = Model_Load(path)
     scene_load = Scene()
     grid_load = opengl.drawgrid.Grid(100)
@@ -103,11 +155,11 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
                     zoom += -0.01
                     if zoom < 0.01:
                         zoom = 0.01
-        if ry > 0:
+        """if ry > 0:
             ry -= 3
         else:
             ry = 360
-
+        """
         glLoadIdentity()
 
         glScalef(zoom, zoom, zoom)

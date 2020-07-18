@@ -9,15 +9,7 @@ import opengl.texture
 import opengl.vertexarray
 
 
-def build(path):
-    # load scenee
-    print('read %s...' % path)
-    t=time.time()
-    model=pymeshio.pmd.reader.read_from_file(path)
-    if not model:
-        return
-    print(time.time()-t, "sec")
-
+def build(path, model):
     # build
     print('build vertexarray...')
     t=time.time()

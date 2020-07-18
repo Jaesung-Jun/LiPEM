@@ -11,14 +11,14 @@ class Grid:
         glColor3f(0.75, 0.75, 0.75)
         for i in range(self.half_grid_size):
             
-            glVertex3f(i*3, 0, -self.half_grid_size)
-            glVertex3f(i*3, 0, self.half_grid_size)
-            glVertex3f(-i*3, 0, -self.half_grid_size)
-            glVertex3f(-i*3, 0, self.half_grid_size)
+            glVertex3f(i*5, 0, -self.half_grid_size)
+            glVertex3f(i*5, 0, self.half_grid_size)
+            glVertex3f(-i*5, 0, -self.half_grid_size)
+            glVertex3f(-i*5, 0, self.half_grid_size)
             
-            glVertex3f(-self.half_grid_size, 0, i*3)
-            glVertex3f(self.half_grid_size, 0, i*3)
-            glVertex3f(-self.half_grid_size, 0, -i*3)
-            glVertex3f(self.half_grid_size, 0, -i*3)
+            glVertex3f(-self.half_grid_size, 0, i*5)
+            glVertex3f(self.half_grid_size, 0, i*5)
+            glVertex3f(-self.half_grid_size, 0, -i*5)
+            glVertex3f(self.half_grid_size, 0, -i*5)
 
         glEnd()
