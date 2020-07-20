@@ -17,9 +17,10 @@ import numpy as np
 import pygame as pg
 import opengl
 import bone
+import math
 
 DISPLAY_X = 1280
-DISPLAY_Y = 760
+DISPLAY_Y = 720
 VIEWPORT_X = 3
 VIEWPORT_Y = 3
 
@@ -126,9 +127,10 @@ class Model_Load:
 
 def main(display=(DISPLAY_X, DISPLAY_Y)):
         
-    cameraxyz = [0, 10, 3]
-    objectxyz = [0, 10, 0]
-    upxyz = [0, 1, 0]
+    camera_pos  = np.array([0, 10, 3])
+    lookat_pos = np.array([0, 10, 0])
+    camera_up = np.array([0, 1, 0])
+    camera_speed = np.array(0.05)
 
     path = "miku/miku.pmx"
     model_load = Model_Load(path)
@@ -140,15 +142,14 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     screen = pg.display.set_mode(display, pg.OPENGL | pg.DOUBLEBUF)
 
     glClearColor(150, 150, 150, 0)
-    
 
     #View
     glViewport(0, 0, display[0], display[1])
     glMatrixMode(GL_PROJECTION)
     aspect = display[0]/display[1]
-    glOrtho(-aspect, aspect, -1, 1, -1, 1);
-    glMatrixMode(GL_MODELVIEW)
+    glOrtho(-aspect, aspect, -1, 1, 0, 10);
 
+    glMatrixMode(GL_MODELVIEW)
     glEnable(GL_DEPTH_TEST)
     glClearDepth(1.0)
     glDepthFunc(GL_LESS)
@@ -164,14 +165,32 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
                 if event.key == pg.K_ESCAPE:
                     pg.quit()
                     quit()
-                elif event.key == pg.K_UP: cameraxyz[1] -= 3
-                elif event.key == pg.K_DOWN: cameraxyz[1] -= -3
-                elif event.key == pg.K_RIGHT: cameraxyz[0] -= 3
-                elif event.key == pg.K_LEFT:  cameraxyz[0] -= -3
-                elif event.key == pg.K_d: upxyz[0] -= -0.4
-                elif event.key == pg.K_a: upxyz[0] -= 0.4
-                elif event.key == pg.K_w: upxyz[1] -= -0.4
-                elif event.key == pg.K_s: upxyz[1] -= 0.4
+                elif event.key == pg.K_UP:
+                    camera_pos[1] += 3 
+                    print("camera y : {}".format(camera_pos[1]))
+                elif event.key == pg.K_DOWN: 
+                    camera_pos[1] -= 3
+                    print("camera y : {}".format(camera_pos[1]))
+                elif event.key == pg.K_RIGHT: 
+                    camera_pos[0] += 1
+                    print("camera x : {}".format(camera_pos[0]))
+                elif event.key == pg.K_LEFT:  
+                    camera_pos[0] -= 1
+                    print("camera x : {}".format(camera_pos[0]))
+                """
+                elif event.key == pg.K_d:
+                    upxyz[0] -= -0.4
+                    print("up x : {}".format(upxyz[0]))
+                elif event.key == pg.K_a: 
+                    upxyz[0] -= 0.4
+                    print("up x : {}".format(upxyz[0]))
+                elif event.key == pg.K_w: 
+                    upxyz[1] -= -0.4
+                    print("up y : {}".format(upxyz[1]))
+                elif event.key == pg.K_s: 
+                    upxyz[1] -= 0.4
+                    print("up y : {}".format(upxyz[1]))
+                """
                 """
                 elif event.key == pg.K_2: cameraxyz[2] += 0.1
                 elif event.key == pg.K_1: 
@@ -187,14 +206,15 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
         """
         
         glLoadIdentity()
-        gluPerspective(60.0, DISPLAY_X/DISPLAY_Y, 10, 10)
+        #gluPerspective(60, DISPLAY_X/DISPLAY_Y, 1, 10)
         glScalef(0.1, 0.1, 0.1)
         #glRotatef(ry, 0, 1, 0)
         #glRotatef(rx, 1, 0, 0)
         #glTranslatef(tx, ty, tz)
-        gluLookAt(cameraxyz[0], cameraxyz[1], cameraxyz[2],
-                  objectxyz[0], objectxyz[1], objectxyz[2],
-                  upxyz[0], upxyz[1], upxyz[2])
+        
+        gluLookAt(camera_pos[0], camera_pos[1], camera_pos[2],
+                  lookat_pos[0], lookat_pos[1], lookat_pos[2],
+                  camera_up[0], camera_up[1], camera_up[2])
 
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
