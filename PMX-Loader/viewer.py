@@ -127,12 +127,14 @@ class Model_Load:
 
 def main(display=(DISPLAY_X, DISPLAY_Y)):
         
-    camera_pos  = np.array([0, 10, 3])
-    lookat_pos = np.array([0, 10, 0])
-    camera_up = np.array([0, 1, 0])
+    camera_pos  = np.array([0.0, 10.0, 3.0])
+    lookat_pos = np.array([0.0, 10.0, 0.0])
+    camera_up = np.array([0.0, 1.0, 0.0])
     camera_speed = np.array(0.05)
+    aspect = display[0]/display[1]
+    zoom = 1.0
 
-    path = "miku/miku.pmx"
+    path = "ashe/Ashe.pmx"
     model_load = Model_Load(path)
     scene_load = Scene()
     grid_load = opengl.drawgrid.Grid(100)
@@ -142,20 +144,14 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     screen = pg.display.set_mode(display, pg.OPENGL | pg.DOUBLEBUF)
 
     glClearColor(150, 150, 150, 0)
-
     #View
     glViewport(0, 0, display[0], display[1])
-    glMatrixMode(GL_PROJECTION)
-    aspect = display[0]/display[1]
-    glOrtho(-aspect, aspect, -1, 1, 0, 10);
 
-    glMatrixMode(GL_MODELVIEW)
     glEnable(GL_DEPTH_TEST)
     glClearDepth(1.0)
     glDepthFunc(GL_LESS)
     glDepthRange(0.0,1.0)
     
-
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -166,17 +162,20 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
                     pg.quit()
                     quit()
                 elif event.key == pg.K_UP:
-                    camera_pos[1] += 3 
-                    print("camera y : {}".format(camera_pos[1]))
+                    camera_pos[1] += 0.3
                 elif event.key == pg.K_DOWN: 
-                    camera_pos[1] -= 3
-                    print("camera y : {}".format(camera_pos[1]))
+                    camera_pos[1] -= 0.3
                 elif event.key == pg.K_RIGHT: 
-                    camera_pos[0] += 1
-                    print("camera x : {}".format(camera_pos[0]))
+                    camera_pos[0] += 0.3
                 elif event.key == pg.K_LEFT:  
-                    camera_pos[0] -= 1
-                    print("camera x : {}".format(camera_pos[0]))
+                    camera_pos[0] -= 0.3
+                elif event.key == pg.K_2: 
+                    zoom += 0.3
+                elif event.key == pg.K_1: 
+                    zoom += -0.3
+                    if zoom < 0:
+                        zoom = 0.1
+                print("camera pos : {}, zoom : {}".format(camera_pos, zoom))
                 """
                 elif event.key == pg.K_d:
                     upxyz[0] -= -0.4
@@ -191,27 +190,14 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
                     upxyz[1] -= 0.4
                     print("up y : {}".format(upxyz[1]))
                 """
-                """
-                elif event.key == pg.K_2: cameraxyz[2] += 0.1
-                elif event.key == pg.K_1: 
-                    cameraxyz[2] += -0.1
-                    if cameraxyz[2] < 0.1:
-                        cameraxyz[2] = 0.1
-                """
-        """
-        if ry > 0:
-            ry -= 3
-        else:
-            ry = 360
-        """
         
         glLoadIdentity()
-        #gluPerspective(60, DISPLAY_X/DISPLAY_Y, 1, 10)
-        glScalef(0.1, 0.1, 0.1)
+        glOrtho(-aspect*zoom, aspect*zoom, -1*zoom, 1*zoom, -1*zoom, 10*zoom);
+        glMatrixMode(GL_MODELVIEW)
         #glRotatef(ry, 0, 1, 0)
         #glRotatef(rx, 1, 0, 0)
         #glTranslatef(tx, ty, tz)
-        
+        glScalef(0.1, 0.1, 0.1)
         gluLookAt(camera_pos[0], camera_pos[1], camera_pos[2],
                   lookat_pos[0], lookat_pos[1], lookat_pos[2],
                   camera_up[0], camera_up[1], camera_up[2])
