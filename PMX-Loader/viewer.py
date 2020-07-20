@@ -117,20 +117,18 @@ class Model_Load:
     def draw_bone(self):
         glDepthFunc(GL_ALWAYS)
         glColor3f(0, 0, 1)
-        glPointSize(10.0)
+        glPointSize(7.0)
         for i in range(len(self.model_bone)):
             glBegin(GL_POINTS)
-            glVertex3f(self.model_bone[i].x, self.model_bone[i].y, self.model_bone[i].z-0.5)
+            glVertex3f(self.model_bone[i].x, self.model_bone[i].y, self.model_bone[i].z)
             glEnd()
         glDepthFunc(GL_LESS)
+
 def main(display=(DISPLAY_X, DISPLAY_Y)):
         
-    tx = 0
-    ty = -10
-    tz = 0
-    rx = 0
-    ry = 180
-    zoom = 0.1
+    cameraxyz = [0, 10, 3]
+    objectxyz = [0, 10, 0]
+    upxyz = [0, 1, 0]
 
     path = "miku/miku.pmx"
     model_load = Model_Load(path)
@@ -143,8 +141,7 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
 
     glClearColor(150, 150, 150, 0)
     
-    gluPerspective(60.0, DISPLAY_Y/DISPLAY_X, 1.0, 20.0)
-    
+
     #View
     glViewport(0, 0, display[0], display[1])
     glMatrixMode(GL_PROJECTION)
@@ -156,6 +153,7 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     glClearDepth(1.0)
     glDepthFunc(GL_LESS)
     glDepthRange(0.0,1.0)
+    
 
     while True:
         for event in pg.event.get():
@@ -166,30 +164,38 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
                 if event.key == pg.K_ESCAPE:
                     pg.quit()
                     quit()
-                elif event.key == pg.K_UP: rx -= 3
-                elif event.key == pg.K_DOWN: rx -= -3
-                elif event.key == pg.K_RIGHT: ry -= 3
-                elif event.key == pg.K_LEFT:  ry -= -3
-                elif event.key == pg.K_d: tx -= -0.4
-                elif event.key == pg.K_a: tx -= 0.4
-                elif event.key == pg.K_w: ty -= -0.4
-                elif event.key == pg.K_s: ty -= 0.4
-                elif event.key == pg.K_2: zoom += 0.01
+                elif event.key == pg.K_UP: cameraxyz[1] -= 3
+                elif event.key == pg.K_DOWN: cameraxyz[1] -= -3
+                elif event.key == pg.K_RIGHT: cameraxyz[0] -= 3
+                elif event.key == pg.K_LEFT:  cameraxyz[0] -= -3
+                elif event.key == pg.K_d: upxyz[0] -= -0.4
+                elif event.key == pg.K_a: upxyz[0] -= 0.4
+                elif event.key == pg.K_w: upxyz[1] -= -0.4
+                elif event.key == pg.K_s: upxyz[1] -= 0.4
+                """
+                elif event.key == pg.K_2: cameraxyz[2] += 0.1
                 elif event.key == pg.K_1: 
-                    zoom += -0.01
-                    if zoom < 0.01:
-                        zoom = 0.01
+                    cameraxyz[2] += -0.1
+                    if cameraxyz[2] < 0.1:
+                        cameraxyz[2] = 0.1
+                """
+        """
         if ry > 0:
             ry -= 3
         else:
             ry = 360
+        """
         
         glLoadIdentity()
+        gluPerspective(60.0, DISPLAY_X/DISPLAY_Y, 10, 10)
+        glScalef(0.1, 0.1, 0.1)
+        #glRotatef(ry, 0, 1, 0)
+        #glRotatef(rx, 1, 0, 0)
+        #glTranslatef(tx, ty, tz)
+        gluLookAt(cameraxyz[0], cameraxyz[1], cameraxyz[2],
+                  objectxyz[0], objectxyz[1], objectxyz[2],
+                  upxyz[0], upxyz[1], upxyz[2])
 
-        glScalef(zoom, zoom, zoom)
-        glRotatef(ry, 0, 1, 0)
-        glRotatef(rx, 1, 0, 0)
-        glTranslatef(tx, ty, tz)
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
         model_load.draw()
