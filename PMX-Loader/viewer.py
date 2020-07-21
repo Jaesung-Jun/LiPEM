@@ -130,7 +130,6 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     camera_pos  = np.array([0.0, 10.0, 3.0])
     lookat_pos = np.array([0.0, 10.0, 0.0])
     camera_up = np.array([0.0, 1.0, 0.0])
-    camera_speed = np.array(0.05)
     aspect = display[0]/display[1]
     zoom = 1.0
 
@@ -140,6 +139,11 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     grid_load = opengl.drawgrid.Grid(100)
     
     pg.init()
+    pg.display.set_caption('Real-time Pose Estimation with MMD Models')
+    
+    #Texts on window
+    text_font = pg.font.SysFont("Arial", 15)
+
     clock = pg.time.Clock()
     screen = pg.display.set_mode(display, pg.OPENGL | pg.DOUBLEBUF)
 
@@ -175,24 +179,29 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
                     zoom += -0.3
                     if zoom < 0:
                         zoom = 0.1
-                print("camera pos : {}, zoom : {}".format(camera_pos, zoom))
-                """
                 elif event.key == pg.K_d:
-                    upxyz[0] -= -0.4
-                    print("up x : {}".format(upxyz[0]))
+                    lookat_pos[0] -= -0.3
+                    camera_pos[0] -= -0.3
                 elif event.key == pg.K_a: 
-                    upxyz[0] -= 0.4
-                    print("up x : {}".format(upxyz[0]))
+                    lookat_pos[0] -= 0.3
+                    camera_pos[0] -= 0.3
                 elif event.key == pg.K_w: 
-                    upxyz[1] -= -0.4
-                    print("up y : {}".format(upxyz[1]))
+                    lookat_pos[1] -= -0.3
+                    camera_pos[1] -= -0.3
                 elif event.key == pg.K_s: 
-                    upxyz[1] -= 0.4
-                    print("up y : {}".format(upxyz[1]))
-                """
+                    lookat_pos[1] -= 0.3
+                    camera_pos[1] -= 0.3
+                print("camera pos : {}, zoom : {}".format(camera_pos, zoom))
+
+        """
+        pos_text = text_font.render('camera position : {0}, {1}, {2}'.format(camera_pos[0], camera_pos[1], camera_pos[2]), True, (0, 0, 0))
+        zoom_text = text_font.render('zoom position : {}'.format(zoom), True, (0, 0, 0))
+        screen.blit(pos_text, (0, 0))
+        screen.blit(pos_text, (0, 20))
+        """
         
         glLoadIdentity()
-        glOrtho(-aspect*zoom, aspect*zoom, -1*zoom, 1*zoom, -1*zoom, 10*zoom);
+        glOrtho(-aspect*zoom, aspect*zoom, -1*zoom, 1*zoom, -5*zoom, 50*zoom);
         glMatrixMode(GL_MODELVIEW)
         #glRotatef(ry, 0, 1, 0)
         #glRotatef(rx, 1, 0, 0)
