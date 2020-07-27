@@ -133,7 +133,7 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     aspect = display[0]/display[1]
     zoom = 1.0
 
-    path = "models/ashe/Ashe.pmx"
+    path = "models/miku/miku.pmx"
     model_load = Model_Load(path)
     scene_load = Scene()
     grid_load = opengl.drawgrid.Grid(100)
