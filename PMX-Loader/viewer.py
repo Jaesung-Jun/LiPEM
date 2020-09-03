@@ -1,5 +1,6 @@
 import pymeshio.pmx.reader
 import pymeshio
+
 import opengl.material
 import opengl.texture
 import opengl.vertexarray
@@ -12,12 +13,18 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 
 import pmxbuilder
+import xbuilder
+import pmdbuilder
+import mqobuilder
+
 import os
 import numpy as np
 import pygame as pg
 import opengl
 import bone
 import math
+
+import animation.main
 
 DISPLAY_X = 1280
 DISPLAY_Y = 720
@@ -60,13 +67,13 @@ class Model_Load:
             model=pymeshio.mqo.reader.read_from_file(path)
             if not model:
                 return
-            return xbuilder.build(path, model)
+            return mqobuilder.build(path, model)
 
         elif path.lower().endswith(".pmd"):
             model=pymeshio.pmd.reader.read_from_file(path)
             if not model:
                 return
-            return xbuilder.build(path, model)
+            return pmdbuilder.build(path, model)
 
         elif path.lower().endswith(".pmx"):
             model=pymeshio.pmx.reader.read_from_file(path)
@@ -91,6 +98,7 @@ class Model_Load:
 
         elif path.lower().endswith(".pmx"):
             model=pymeshio.pmx.reader.read_from_file(path)
+            animation.main.Animation(model)
             if not model:
                 return
 
@@ -133,7 +141,7 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     aspect = display[0]/display[1]
     zoom = 1.0
 
-    path = "models/ashe/Ashe.pmx"
+    path = "models/miku/miku.pmx"
     model_load = Model_Load(path)
     scene_load = Scene()
     grid_load = opengl.drawgrid.Grid(100)
@@ -212,9 +220,11 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
                   camera_up[0], camera_up[1], camera_up[2])
 
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
-
-        model_load.draw()
-        model_load.draw_bone()
+        
+        if FIRST==True:
+            model_load.draw()
+            model_load.draw_bone()
+        
         scene_load.draw()
         grid_load.draw()
 
