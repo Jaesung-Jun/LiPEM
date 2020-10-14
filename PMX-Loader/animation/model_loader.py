@@ -4,6 +4,7 @@
 
 - https://github.com/xing-shuai/PyOpenGL-skeleton-aniamtion
 - https://blog.csdn.net/HelloWorld1108/article/details/89228893
+- https://www.khronos.org/opengl/wiki/Keyframe_Animation
 
 """
 from collada import Collada
@@ -14,7 +15,6 @@ from OpenGL.GLUT import *
 from ctypes import c_float, c_void_p, sizeof
 import numpy as np
 from .transformations import quaternion_from_matrix, quaternion_matrix, quaternion_slerp
-
 
 class Joint:
     def __init__(self, id, inverse_transform_matrix):

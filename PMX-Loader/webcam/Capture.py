@@ -5,6 +5,7 @@ https://github.com/CalciferZh/minimal-hand/blob/911eab268342c3cdc08e80fd371cf600
 """
 import cv2
 import numpy as np
+from network.input_reader import VideoReader, ImageReader
 
 class OpenCVCapture:
     

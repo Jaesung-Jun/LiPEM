@@ -25,7 +25,6 @@ VIEWPORT_X = 3
 VIEWPORT_Y = 3
 
 class Scene:
-
     def __init__(self, items=[]):
         """
         items : pmx(or pmd etc.)builder.build() Instance
@@ -55,32 +54,35 @@ class Model_Load:
     def __load(self, path):
 
         print("Loading....")
-
-        if path.lower().endswith(".mqo"):
+        """
+        elif path.lower().endswith(".mqo"):
             model=pymeshio.mqo.reader.read_from_file(path)
             if not model:
                 return
             return xbuilder.build(path, model)
-
-        elif path.lower().endswith(".pmd"):
-            model=pymeshio.pmd.reader.read_from_file(path)
-            if not model:
-                return
-            return xbuilder.build(path, model)
-
-        elif path.lower().endswith(".pmx"):
-            model=pymeshio.pmx.reader.read_from_file(path)
-            if not model:
-                return
-            return pmxbuilder.build(path, model)
 
         elif path.lower().endswith(".x"):
             model=pymeshio.x.reader.read_from_file(path)
             if not model:
                 return
             return xbuilder.build(path, model)
+        """
+            
+        if path.lower().endswith(".pmd"):
+            model=pymeshio.pmd.reader.read_from_file(path)
+            if not model:
+                return
+            return xbuilder.build(path, model)
+        
+        elif path.lower().endswith(".pmx"):
+            model=pymeshio.pmx.reader.read_from_file(path)
+            if not model:
+                return
+            return pmxbuilder.build(path, model)
+
         else:
             print("Unknown file format : {0}".format(path))
+
 
     def __bone_load(self, path):
 
@@ -223,4 +225,3 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
         
 if __name__ == "__main__":
     main()
-
