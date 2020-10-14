@@ -1,5 +1,6 @@
 import pymeshio.pmx.reader
 import pymeshio
+
 import opengl.material
 import opengl.texture
 import opengl.vertexarray
@@ -12,6 +13,10 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 
 import pmxbuilder
+import xbuilder
+import pmdbuilder
+import mqobuilder
+
 import os
 import numpy as np
 import pygame as pg
@@ -19,12 +24,15 @@ import opengl
 import bone
 import math
 
+import animation.main
+
 DISPLAY_X = 1280
 DISPLAY_Y = 720
 VIEWPORT_X = 3
 VIEWPORT_Y = 3
 
 class Scene:
+
     def __init__(self, items=[]):
         """
         items : pmx(or pmd etc.)builder.build() Instance
@@ -54,35 +62,32 @@ class Model_Load:
     def __load(self, path):
 
         print("Loading....")
-        """
-        elif path.lower().endswith(".mqo"):
+
+        if path.lower().endswith(".mqo"):
             model=pymeshio.mqo.reader.read_from_file(path)
             if not model:
                 return
-            return xbuilder.build(path, model)
+            return mqobuilder.build(path, model)
 
-        elif path.lower().endswith(".x"):
-            model=pymeshio.x.reader.read_from_file(path)
-            if not model:
-                return
-            return xbuilder.build(path, model)
-        """
-            
-        if path.lower().endswith(".pmd"):
+        elif path.lower().endswith(".pmd"):
             model=pymeshio.pmd.reader.read_from_file(path)
             if not model:
                 return
-            return xbuilder.build(path, model)
-        
+            return pmdbuilder.build(path, model)
+
         elif path.lower().endswith(".pmx"):
             model=pymeshio.pmx.reader.read_from_file(path)
             if not model:
                 return
             return pmxbuilder.build(path, model)
 
+        elif path.lower().endswith(".x"):
+            model=pymeshio.x.reader.read_from_file(path)
+            if not model:
+                return
+            return xbuilder.build(path, model)
         else:
             print("Unknown file format : {0}".format(path))
-
 
     def __bone_load(self, path):
 
@@ -93,6 +98,7 @@ class Model_Load:
 
         elif path.lower().endswith(".pmx"):
             model=pymeshio.pmx.reader.read_from_file(path)
+            animation.main.Animation(model)
             if not model:
                 return
 
@@ -214,9 +220,11 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
                   camera_up[0], camera_up[1], camera_up[2])
 
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
-
-        model_load.draw()
-        model_load.draw_bone()
+        
+        if FIRST==True:
+            model_load.draw()
+            model_load.draw_bone()
+        
         scene_load.draw()
         grid_load.draw()
 
@@ -225,3 +233,4 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
         
 if __name__ == "__main__":
     main()
+
