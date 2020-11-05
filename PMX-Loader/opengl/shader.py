@@ -23,13 +23,14 @@ class Shader(object):
         self.initShader(self.vs_src, self.fs_src)
         self.is_initialized=True
 
+
     def initShader(self, vertex_shader_source, fragment_shader_source):
         # create program
         self.program=glCreateProgram()
         print('create program')
-        printOpenGLError()
+        printOpenGLError()  
 
-        # vertex shader
+        # vertex shader8
         print('vertex shader')
         self.vs = glCreateShader(GL_VERTEX_SHADER)
         glShaderSource(self.vs, [vertex_shader_source])
@@ -48,7 +49,7 @@ class Shader(object):
         print('link...')
         glLinkProgram(self.program)
         printOpenGLError()
-
+    
     def draw(self):
         if not self.is_initialized:
             self.initialize()

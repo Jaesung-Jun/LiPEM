@@ -32,7 +32,6 @@ VIEWPORT_X = 3
 VIEWPORT_Y = 3
 
 class Scene:
-
     def __init__(self, items=[]):
         """
         items : pmx(or pmd etc.)builder.build() Instance
@@ -62,37 +61,41 @@ class Model_Load:
     def __load(self, path):
 
         print("Loading....")
-
-        if path.lower().endswith(".mqo"):
+        """
+        elif path.lower().endswith(".mqo"):
             model=pymeshio.mqo.reader.read_from_file(path)
             if not model:
                 return
             return mqobuilder.build(path, model)
-
-        elif path.lower().endswith(".pmd"):
-            model=pymeshio.pmd.reader.read_from_file(path)
-            if not model:
-                return
-            return pmdbuilder.build(path, model)
-
-        elif path.lower().endswith(".pmx"):
-            model=pymeshio.pmx.reader.read_from_file(path)
-            if not model:
-                return
-            return pmxbuilder.build(path, model)
 
         elif path.lower().endswith(".x"):
             model=pymeshio.x.reader.read_from_file(path)
             if not model:
                 return
             return xbuilder.build(path, model)
+        """
+            
+        if path.lower().endswith(".pmd"):
+            model=pymeshio.pmd.reader.read_from_file(path)
+            if not model:
+                return
+            return pmdbuilder.build(path, model)
+        
+        elif path.lower().endswith(".pmx"):
+            model=pymeshio.pmx.reader.read_from_file(path)
+            if not model:
+                return
+            return pmxbuilder.build(path, model)
+
         else:
             print("Unknown file format : {0}".format(path))
+
 
     def __bone_load(self, path):
 
         if path.lower().endswith(".pmd"):
             model=pymeshio.pmd.reader.read_from_file(path)
+            animation.main.Animation(model)
             if not model:
                 return
 
@@ -125,7 +128,7 @@ class Model_Load:
 
     def draw_bone(self):
         glDepthFunc(GL_ALWAYS)
-        glColor3f(0, 0, 1)
+        glColor3f(1, 0, 0)
         glPointSize(7.0)
         for i in range(len(self.model_bone)):
             glBegin(GL_POINTS)
@@ -141,7 +144,7 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     aspect = display[0]/display[1]
     zoom = 1.0
 
-    path = "models/miku/miku.pmx"
+    path = "models/ashe/Ashe.pmx"
     model_load = Model_Load(path)
     scene_load = Scene()
     grid_load = opengl.drawgrid.Grid(100)
@@ -221,10 +224,8 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
 
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
         
-        if FIRST==True:
-            model_load.draw()
-            model_load.draw_bone()
-        
+        model_load.draw()
+        model_load.draw_bone()
         scene_load.draw()
         grid_load.draw()
 
@@ -233,4 +234,3 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
         
 if __name__ == "__main__":
     main()
-

@@ -28,9 +28,10 @@ def main_bone_info():
     RIGHT_FOOT = "右足"
     RIGHT_KNEE = "右ひざ"
     RIGHT_ANKLE = "右足首"
-    
+    WAIST = "腰"
+
     main_bone = [HEAD, LEFT_ARM, LEFT_ELBOW, LEFT_WRIST, 
                 RIGHT_ARM, RIGHT_ELBOW, RIGHT_WRIST, 
                 LEFT_FOOT, LEFT_KNEE, LEFT_ANKLE, 
-                RIGHT_FOOT, RIGHT_KNEE, RIGHT_ANKLE]
+                RIGHT_FOOT, RIGHT_KNEE, RIGHT_ANKLE, WAIST]
     return main_bone

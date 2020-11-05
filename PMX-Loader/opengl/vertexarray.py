@@ -2,6 +2,7 @@
 # coding: utf-8
 
 from OpenGL.GL import *
+import OpenGL.GL.shaders as shaders
 import ctypes
 import numpy
 
@@ -13,6 +14,11 @@ import numpy
 ====
 * 位置
 '''
+
+def getFileContent(file):
+    content = open(file, 'r').read()
+    return content
+
 class VertexArray(object):
     def __init__(self, vertices):
         self.vertices=vertices
@@ -95,15 +101,15 @@ class VertexArrayWithUV(object):
 * 位置
 * UV
 '''
-class IndexedVertexArray(object):
+class IndexedVertexArray(object): #IMPORTANT!!!
     def __init__(self):
         # vertices
-        self.vertices=[]
-        self.normal=[]
+        self.vertices=[] 
+        self.normal=[]  #정점의 좌표
         self.colors=[]
         self.uvlist=[]
-        self.b0=[]
-        self.b1=[]
+        self.b0=[] #정점이 속한 Bone(1)
+        self.b1=[] #정점이 속한 Bone(2)
         self.w0=[]
         # indices
         self.materials=[]
@@ -111,7 +117,7 @@ class IndexedVertexArray(object):
         self.buffers=[]
 
     def addVertex(self, pos, normal, uv, color, b0, b1, w0):
-        self.vertices+=pos
+        self.vertices+=pos 
         self.normal+=normal
         self.colors+=color
         self.uvlist+=uv
@@ -126,7 +132,7 @@ class IndexedVertexArray(object):
         self.materials.append(material)
 
     def create_array_buffer(self, buffer_id, floats):
-        print('create_array_buffer', buffer_id)
+        #print('create_array_buffer', buffer_id)
         glBindBuffer(GL_ARRAY_BUFFER, buffer_id)
         glBufferData(GL_ARRAY_BUFFER, 
                 len(floats)*4,  # byte size
@@ -145,14 +151,14 @@ class IndexedVertexArray(object):
         # indices
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, self.buffers[4])
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, 
-                len(self.indices)*4, # byte size
+                len(self.indices)*4, # byte sizec  
                 (ctypes.c_uint*len(self.indices))(*self.indices),  # 謎のctypes
                 GL_STATIC_DRAW)
 
     def draw(self):
-        if len(self.buffers)==0:
-            self.create_vbo()
-
+        #if len(self.buffers)==0:
+        self.create_vbo()
+        #print(self.buffers[4])
         glEnableClientState(GL_VERTEX_ARRAY)
         glBindBuffer(GL_ARRAY_BUFFER, self.buffers[0])
         glVertexPointer(4, GL_FLOAT, 0, None)
@@ -161,15 +167,16 @@ class IndexedVertexArray(object):
         glBindBuffer(GL_ARRAY_BUFFER, self.buffers[1])
         glNormalPointer(GL_FLOAT, 0, None)
 
-        #glEnableClientState(GL_COLOR_ARRAY);
-        #glBindBuffer(GL_ARRAY_BUFFER, self.buffers[2]);
-        #glColorPointer(4, GL_FLOAT, 0, None);
+        glEnableClientState(GL_COLOR_ARRAY)
+        glBindBuffer(GL_ARRAY_BUFFER, self.buffers[2])
+        glColorPointer(4, GL_FLOAT, 0, None)
 
         glEnableClientState(GL_TEXTURE_COORD_ARRAY)
         glBindBuffer(GL_ARRAY_BUFFER, self.buffers[3])
         glTexCoordPointer(2, GL_FLOAT, 0, None)
 
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, self.buffers[4]);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, self.buffers[4])
+
         index_offset=0
         for i, m in enumerate(self.materials):
             # submesh
@@ -183,6 +190,7 @@ class IndexedVertexArray(object):
         glDisableClientState(GL_COLOR_ARRAY)
         glDisableClientState(GL_NORMAL_ARRAY)
         glDisableClientState(GL_VERTEX_ARRAY)
+        glDeleteBuffers(5, self.buffers)
     """
     def optimize(self):
         self.vertices=numpy.array(self.vertices, numpy.float32) 
