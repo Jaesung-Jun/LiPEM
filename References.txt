@@ -1,4 +1,0 @@
-PyOpenGL-skeleton-aniamtion csdn blog page https://blog.csdn.net/HelloWorld1108/article/details/89228893
-https://github.com/xing-shuai/PyOpenGL-skeleton-aniamtion
-https://github.com/karfly/learnable-triangulation-pytorch
-https://github.com/CalciferZh/minimal-hand/tree/911eab268342c3cdc08e80fd371cf6003ffd4bd6
