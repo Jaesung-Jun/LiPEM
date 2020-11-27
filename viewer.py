@@ -164,6 +164,21 @@ class Model_Load:
 
         glDepthFunc(GL_LESS)
 
+class Draw_Joint:
+
+    def __init__(self, _main_bone_position):        
+        # Arguments
+        #
+        # main_bone_position : Dictionary
+        #
+        # ex) {"HEAD":[0, 0, 0], ...... }
+
+        self.main_bone_position = _main_bone_position
+
+        if len(bone_temp) - len(bone.main_bone_info()) != 0:
+            print("can't find : {0}".format(list(set(bone.main_bone_info()) - set(bone_temp))))
+
+
 def main(display=(DISPLAY_X, DISPLAY_Y)):
         
     camera_pos  = np.array([0.0, 10.0, 3.0])
