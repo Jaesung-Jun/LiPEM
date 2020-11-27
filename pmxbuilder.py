@@ -8,7 +8,6 @@ import opengl.material
 import opengl.texture
 import opengl.vertexarray
 
-
 def build(path, model):
     # build
     basedir=os.path.dirname(path)

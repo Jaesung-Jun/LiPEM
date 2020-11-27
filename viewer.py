@@ -110,13 +110,14 @@ class Model_Load:
             return
         
         bone_temp = []
-        main_bone_position = []
+        main_bone_position = {}
 
         for i in range(len(model.bones)):
             if model.bones[i].name in bone.main_bone_info():
                 print("{0} : {1}".format(model.bones[i].name, str(model.bones[i].position)))
                 bone_temp.append(model.bones[i].name)
-                main_bone_position.append(model.bones[i].position)
+                #main_bone_position.append(model.bones[i].position)
+                main_bone_position[model.bones[i].name] = model.bones[i].position
 
         if len(bone_temp) - len(bone.main_bone_info()) != 0:
             print("can't find : {0}".format(list(set(bone.main_bone_info()) - set(bone_temp))))
@@ -130,10 +131,37 @@ class Model_Load:
         glDepthFunc(GL_ALWAYS)
         glColor3f(1, 0, 0)
         glPointSize(7.0)
-        for i in range(len(self.model_bone)):
-            glBegin(GL_POINTS)
-            glVertex3f(self.model_bone[i].x, self.model_bone[i].y, self.model_bone[i].z)
-            glEnd()
+        glLineWidth(3.0)
+        #for i in range(len(self.model_bone)):
+        #    glVertex3f(self.model_bone[i].x, self.model_bone[i].y, self.model_bone[i].z)
+        glBegin(GL_LINE_STRIP)
+        glVertex3f(self.model_bone[bone.HEAD].x, self.model_bone[bone.HEAD].y, self.model_bone[bone.HEAD].z)
+        glVertex3f(self.model_bone[bone.LEFT_ARM].x, self.model_bone[bone.LEFT_ARM].y, self.model_bone[bone.LEFT_ARM].z)
+        glVertex3f(self.model_bone[bone.LEFT_ELBOW].x, self.model_bone[bone.LEFT_ELBOW].y, self.model_bone[bone.LEFT_ELBOW].z)
+        glVertex3f(self.model_bone[bone.LEFT_WRIST].x, self.model_bone[bone.LEFT_WRIST].y, self.model_bone[bone.LEFT_WRIST].z)
+        glEnd()
+
+        glBegin(GL_LINE_STRIP)
+        glVertex3f(self.model_bone[bone.HEAD].x, self.model_bone[bone.HEAD].y, self.model_bone[bone.HEAD].z)
+        glVertex3f(self.model_bone[bone.LEFT_FOOT].x, self.model_bone[bone.LEFT_FOOT].y, self.model_bone[bone.LEFT_FOOT].z)
+        glVertex3f(self.model_bone[bone.LEFT_KNEE].x, self.model_bone[bone.LEFT_KNEE].y, self.model_bone[bone.LEFT_KNEE].z)
+        glVertex3f(self.model_bone[bone.LEFT_ANKLE].x, self.model_bone[bone.LEFT_ANKLE].y, self.model_bone[bone.LEFT_ANKLE].z)
+        glEnd()
+
+        glBegin(GL_LINE_STRIP)
+        glVertex3f(self.model_bone[bone.HEAD].x, self.model_bone[bone.HEAD].y, self.model_bone[bone.HEAD].z)
+        glVertex3f(self.model_bone[bone.RIGHT_ARM].x, self.model_bone[bone.RIGHT_ARM].y, self.model_bone[bone.RIGHT_ARM].z)
+        glVertex3f(self.model_bone[bone.RIGHT_ELBOW].x, self.model_bone[bone.RIGHT_ELBOW].y, self.model_bone[bone.RIGHT_ELBOW].z)
+        glVertex3f(self.model_bone[bone.RIGHT_WRIST].x, self.model_bone[bone.RIGHT_WRIST].y, self.model_bone[bone.RIGHT_WRIST].z)
+        glEnd()
+
+        glBegin(GL_LINE_STRIP)
+        glVertex3f(self.model_bone[bone.HEAD].x, self.model_bone[bone.HEAD].y, self.model_bone[bone.HEAD].z)
+        glVertex3f(self.model_bone[bone.RIGHT_FOOT].x, self.model_bone[bone.RIGHT_FOOT].y, self.model_bone[bone.RIGHT_FOOT].z)
+        glVertex3f(self.model_bone[bone.RIGHT_KNEE].x, self.model_bone[bone.RIGHT_KNEE].y, self.model_bone[bone.RIGHT_KNEE].z)
+        glVertex3f(self.model_bone[bone.RIGHT_ANKLE].x, self.model_bone[bone.RIGHT_ANKLE].y, self.model_bone[bone.RIGHT_ANKLE].z)
+        glEnd()
+
         glDepthFunc(GL_LESS)
 
 def main(display=(DISPLAY_X, DISPLAY_Y)):
@@ -144,13 +172,13 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     aspect = display[0]/display[1]
     zoom = 1.0
 
-    path = "models/ashe/Ashe.pmx"
+    path = "models/Ashe/Ashe.pmx"
     model_load = Model_Load(path)
     scene_load = Scene()
     grid_load = opengl.drawgrid.Grid(100)
     
     pg.init()
-    pg.display.set_caption('Real-time Pose Estimation with MMD Models')
+    pg.display.set_caption('LiPEM (Light Pose Estimation with 3D Models)')
     
     #Texts on window
     text_font = pg.font.SysFont("Arial", 15)
