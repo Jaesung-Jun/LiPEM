@@ -161,7 +161,7 @@ class Model_Load:
         glVertex3f(self.model_bone[bone.RIGHT_KNEE].x, self.model_bone[bone.RIGHT_KNEE].y, self.model_bone[bone.RIGHT_KNEE].z)
         glVertex3f(self.model_bone[bone.RIGHT_ANKLE].x, self.model_bone[bone.RIGHT_ANKLE].y, self.model_bone[bone.RIGHT_ANKLE].z)
         glEnd()
-
+        
         glDepthFunc(GL_LESS)
 
 def main(display=(DISPLAY_X, DISPLAY_Y)):
