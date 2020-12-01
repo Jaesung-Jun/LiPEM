@@ -9,7 +9,6 @@ from modules.input_reader import VideoReader, ImageReader
 from modules.draw import Plotter3d, draw_poses
 from modules.parse_poses import parse_poses
 
-
 def rotate_poses(poses_3d, R, t):
     R_inv = np.linalg.inv(R)
     for pose_id in range(len(poses_3d)):
@@ -106,13 +105,8 @@ if __name__ == '__main__':
 
             poses_3d = poses_3d.reshape(poses_3d.shape[0], 19, -1)[:, :, 0:3]
             edges = (Plotter3d.SKELETON_EDGES + 19 * np.arange(poses_3d.shape[0]).reshape((-1, 1, 1))).reshape((-1, 2))
-        #poses_3d[0][19][0] = -130
-        print(type(poses_3d))
         plotter.plot(canvas_3d, poses_3d, edges)
-        draw_poses(frame, poses_2d)        
-        print(poses_3d)
-        print("==2d==")
-        print(poses_2d)
+        draw_poses(frame, poses_2d)       
         current_time = (cv2.getTickCount() - current_time) / cv2.getTickFrequency()
         if mean_time == 0:
             mean_time = current_time
