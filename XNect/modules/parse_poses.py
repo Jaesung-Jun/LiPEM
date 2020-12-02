@@ -1,12 +1,11 @@
 import numpy as np
 
-from modules.pose import Pose, propagate_ids
+from XNect.modules.pose import Pose, propagate_ids
 try:
-    from pose_extractor import extract_poses
+    from XNect.pose_extractor.pose_extractor import extract_poses
 except:
     print('#### Cannot load fast pose extraction, switched to legacy slow implementation. ####')
-    from modules.legacy_pose_extractor import extract_poses
-
+    from XNect.modules.legacy_pose_extractor import extract_poses
 AVG_PERSON_HEIGHT = 180
 
 # pelvis (body center) is missing, id == 2
