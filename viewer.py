@@ -26,6 +26,8 @@ import math
 
 import animation.main
 
+from estimater import Get_Pose_From_Webcam
+
 DISPLAY_X = 1280
 DISPLAY_Y = 720
 VIEWPORT_X = 3
@@ -164,6 +166,103 @@ class Model_Load:
         
         glDepthFunc(GL_LESS)
 
+class Draw_Estimated_Bone:
+
+    def __init__(self, estimated_bone_info):
+        if len(estimated_bone_info) != 0:
+            for i in range(len(estimated_bone_info[0])):
+                estimated_bone_info[0][i][0] += -30
+                estimated_bone_info[0][i][2] += -115
+                estimated_bone_info[0][i][1] += 250
+            self.estimated_bone_info = estimated_bone_info
+
+    def draw_point(self):
+        if len(self.estimated_bone_info) != 0:
+            glBegin(GL_POINTS)
+            for i in range(len(self.estimated_bone_info[0])):
+                glVertex3f(self.estimated_bone_info[0][i][0], self.estimated_bone_info[0][i][2], self.estimated_bone_info[0][i][1])
+            glEnd()
+            
+    def draw_line(self):
+        if len(self.estimated_bone_info) != 0:
+            glDepthFunc(GL_ALWAYS)
+            glColor3f(1, 0, 0)
+            glPointSize(7.0)
+            glLineWidth(3.0)
+
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][0][0], self.estimated_bone_info[0][0][2], self.estimated_bone_info[0][0][1])        #core - upper body
+            glVertex3f(self.estimated_bone_info[0][2][0], self.estimated_bone_info[0][2][2], self.estimated_bone_info[0][2][1])        #core - hip
+            glEnd()
+
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][0][0], self.estimated_bone_info[0][0][2], self.estimated_bone_info[0][0][1])        #core - upper body
+            glVertex3f(self.estimated_bone_info[0][1][0], self.estimated_bone_info[0][1][2], self.estimated_bone_info[0][1][1])        #core - hip
+            glEnd()
+            ########################################################################################################
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][0][0], self.estimated_bone_info[0][0][2], self.estimated_bone_info[0][0][1])        #core - upper body
+            glVertex3f(self.estimated_bone_info[0][3][0], self.estimated_bone_info[0][3][2], self.estimated_bone_info[0][3][1])        #l_sho
+            glEnd()
+
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][0][0], self.estimated_bone_info[0][0][2], self.estimated_bone_info[0][0][1])        #core - upper body
+            glVertex3f(self.estimated_bone_info[0][9][0], self.estimated_bone_info[0][9][2], self.estimated_bone_info[0][9][1])        #r_sho
+            glEnd()
+            ########################################################################################################
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][2][0], self.estimated_bone_info[0][2][2], self.estimated_bone_info[0][2][1])        #core - hip
+            glVertex3f(self.estimated_bone_info[0][6][0], self.estimated_bone_info[0][6][2], self.estimated_bone_info[0][6][1])        #l_hip
+            glEnd()
+
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][2][0], self.estimated_bone_info[0][2][2], self.estimated_bone_info[0][2][1])        #core - hip
+            glVertex3f(self.estimated_bone_info[0][12][0], self.estimated_bone_info[0][12][2], self.estimated_bone_info[0][12][1])        #r_hip
+            glEnd()
+            ########################################################################################################
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][1][0], self.estimated_bone_info[0][1][2], self.estimated_bone_info[0][1][1])        #nose
+            glVertex3f(self.estimated_bone_info[0][15][0], self.estimated_bone_info[0][15][2], self.estimated_bone_info[0][15][1])        #right eye
+            glVertex3f(self.estimated_bone_info[0][17][0], self.estimated_bone_info[0][17][2], self.estimated_bone_info[0][17][1])        #right ear
+            glEnd()
+            
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][1][0], self.estimated_bone_info[0][1][2], self.estimated_bone_info[0][1][1])        #nose
+            glVertex3f(self.estimated_bone_info[0][16][0], self.estimated_bone_info[0][16][2], self.estimated_bone_info[0][16][1])        #left eye
+            glVertex3f(self.estimated_bone_info[0][18][0], self.estimated_bone_info[0][18][2], self.estimated_bone_info[0][18][1])        #left ear
+            glEnd()
+
+            ########################################################################################################
+
+
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][3][0], self.estimated_bone_info[0][3][2], self.estimated_bone_info[0][3][1])        # l_sho
+            glVertex3f(self.estimated_bone_info[0][4][0], self.estimated_bone_info[0][4][2], self.estimated_bone_info[0][4][1])        # l_elb
+            glVertex3f(self.estimated_bone_info[0][5][0], self.estimated_bone_info[0][5][2], self.estimated_bone_info[0][5][1])        # l_wri
+            glEnd()
+
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][6][0], self.estimated_bone_info[0][6][2], self.estimated_bone_info[0][6][1])        # l_hip
+            glVertex3f(self.estimated_bone_info[0][7][0], self.estimated_bone_info[0][7][2], self.estimated_bone_info[0][7][1])        # l_knee
+            glVertex3f(self.estimated_bone_info[0][8][0], self.estimated_bone_info[0][8][2], self.estimated_bone_info[0][8][1])        # l_ank
+            glEnd()
+
+            ########################################################################################################
+
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][9][0], self.estimated_bone_info[0][9][2], self.estimated_bone_info[0][9][1])        # r_sho
+            glVertex3f(self.estimated_bone_info[0][10][0], self.estimated_bone_info[0][10][2], self.estimated_bone_info[0][10][1])        # r_elb
+            glVertex3f(self.estimated_bone_info[0][11][0], self.estimated_bone_info[0][11][2], self.estimated_bone_info[0][11][1])        # r_wri
+            glEnd()
+
+            glBegin(GL_LINE_STRIP)
+            glVertex3f(self.estimated_bone_info[0][12][0], self.estimated_bone_info[0][12][2], self.estimated_bone_info[0][12][1])        # r_hip
+            glVertex3f(self.estimated_bone_info[0][13][0], self.estimated_bone_info[0][13][2], self.estimated_bone_info[0][13][1])        # r_knee
+            glVertex3f(self.estimated_bone_info[0][14][0], self.estimated_bone_info[0][14][2], self.estimated_bone_info[0][14][1])        # r_ank
+            glEnd()
+
+            glDepthFunc(GL_LESS)
+
 class Draw_Joint:
 
     def __init__(self, _main_bone_position):        
@@ -185,7 +284,7 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     lookat_pos = np.array([0.0, 10.0, 0.0])
     camera_up = np.array([0.0, 1.0, 0.0])
     aspect = display[0]/display[1]
-    zoom = 1.0
+    zoom = 10.0
 
     path = "models/Ashe/Ashe.pmx"
     model_load = Model_Load(path)
@@ -209,7 +308,10 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
     glClearDepth(1.0)
     glDepthFunc(GL_LESS)
     glDepthRange(0.0,1.0)
-    
+
+    pose = Get_Pose_From_Webcam()
+    estimated_bone_info = []
+
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -260,7 +362,7 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
         #glRotatef(ry, 0, 1, 0)
         #glRotatef(rx, 1, 0, 0)
         #glTranslatef(tx, ty, tz)
-        glScalef(0.1, 0.1, 0.1)
+        glScalef(1, 1, 1)
         gluLookAt(camera_pos[0], camera_pos[1], camera_pos[2],
                   lookat_pos[0], lookat_pos[1], lookat_pos[2],
                   camera_up[0], camera_up[1], camera_up[2])
@@ -272,6 +374,17 @@ def main(display=(DISPLAY_X, DISPLAY_Y)):
         scene_load.draw()
         grid_load.draw()
 
+        estimated_bone_info = pose.estimate_poses()
+        estimated_bone = Draw_Estimated_Bone(estimated_bone_info)
+
+        #if estimated_bone_info != None:
+        
+        glColor3f(0, 1, 0)
+        
+        if len(estimated_bone_info) != 0:
+            estimated_bone.draw_point()
+        if len(estimated_bone_info) != 0:
+            estimated_bone.draw_line()
         pg.display.flip()
         clock.tick(30)
         

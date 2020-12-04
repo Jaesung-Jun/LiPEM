@@ -2,12 +2,11 @@ import numpy as np
 
 from XNect.modules.pose import Pose, propagate_ids
 try:
-    from XNect.pose_extractor.pose_extractor import extract_poses
+    from pose_extractor import extract_poses
 except:
     print('#### Cannot load fast pose extraction, switched to legacy slow implementation. ####')
     from XNect.modules.legacy_pose_extractor import extract_poses
 AVG_PERSON_HEIGHT = 180
-
 # pelvis (body center) is missing, id == 2
 map_id_to_panoptic = [1, 0, 9, 10, 11, 3, 4, 5, 12, 13, 14, 6, 7, 8, 15, 16, 17, 18]
 

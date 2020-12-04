@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{29FB6DAF-C64D-3D10-8D20-4AE256377D22}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>pose_extractor</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pose_extractor.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pose_extractor</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.pyd</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">pose_extractor.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">pose_extractor</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.pyd</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">pose_extractor.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">pose_extractor</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.pyd</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">pose_extractor.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">pose_extractor</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.pyd</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";pose_extractor_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";pose_extractor_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreLinkEvent>
+      <Message>Auto build dll exports</Message>
+      <Command>setlocal
+cd "F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp"
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Installed Programs (D Drive)\bin\cmake.exe" -E __create_def "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/Debug/exports.def" "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/Debug//objects.txt"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>F:\Anaconda\envs\MMD\libs\python37.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/Debug/pose_extractor.lib</ImportLibrary>
+      <ModuleDefinitionFile>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/Debug/exports.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/Debug/pose_extractor.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";pose_extractor_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";pose_extractor_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreLinkEvent>
+      <Message>Auto build dll exports</Message>
+      <Command>setlocal
+cd "F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp"
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Installed Programs (D Drive)\bin\cmake.exe" -E __create_def "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/Release/exports.def" "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/Release//objects.txt"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>F:\Anaconda\envs\MMD\libs\python37.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.lib</ImportLibrary>
+      <ModuleDefinitionFile>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/Release/exports.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/pose_extractor.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel";pose_extractor_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";pose_extractor_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreLinkEvent>
+      <Message>Auto build dll exports</Message>
+      <Command>setlocal
+cd "F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp"
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Installed Programs (D Drive)\bin\cmake.exe" -E __create_def "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/MinSizeRel/exports.def" "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/MinSizeRel//objects.txt"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>F:\Anaconda\envs\MMD\libs\python37.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/MinSizeRel/pose_extractor.lib</ImportLibrary>
+      <ModuleDefinitionFile>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/MinSizeRel/exports.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/MinSizeRel/pose_extractor.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";pose_extractor_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";pose_extractor_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src;F:\Anaconda\envs\MMD\include;F:\Anaconda\envs\MMD\lib\site-packages\numpy\core\include;F:\OpenCV\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreLinkEvent>
+      <Message>Auto build dll exports</Message>
+      <Command>setlocal
+cd "F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp"
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Installed Programs (D Drive)\bin\cmake.exe" -E __create_def "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/RelWithDebInfo/exports.def" "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/RelWithDebInfo//objects.txt"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>F:\Anaconda\envs\MMD\libs\python37.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;F:\OpenCV\opencv\build\x64\vc14\lib\opencv_world440.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/RelWithDebInfo/pose_extractor.lib</ImportLibrary>
+      <ModuleDefinitionFile>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/pose_extractor.dir/RelWithDebInfo/exports.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/RelWithDebInfo/pose_extractor.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"D:\Installed Programs (D Drive)\bin\cmake.exe" "-SF:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor" "-BF:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp" --check-stamp-file "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCCompilerABI.c;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCommonLanguageInclude.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCompilerIdDetection.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCXXCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompileFeatures.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompilerABI.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompilerId.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineRCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineSystem.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeFindBinUtils.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeFindFrameworks.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeGenericSystem.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeInitializeConfigs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeLanguageInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeRCCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeRCInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystem.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystemSpecificInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystemSpecificInitialize.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCXXCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCompilerCommon.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestRCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-C.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CompilerId\VS-10.vcxproj.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPackageHandleStandardArgs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPackageMessage.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPythonInterp.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPythonLibs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Internal\FeatureTesting.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-Determine-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC-C.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\WindowsPaths.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\SelectLibraryConfigurations.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeCCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeCXXCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeRCCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeSystem.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\feature_tests.cxx;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVConfig-version.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVConfig.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules-debug.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules-release.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"D:\Installed Programs (D Drive)\bin\cmake.exe" "-SF:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor" "-BF:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp" --check-stamp-file "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCCompilerABI.c;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCommonLanguageInclude.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCompilerIdDetection.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCXXCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompileFeatures.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompilerABI.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompilerId.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineRCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineSystem.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeFindBinUtils.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeFindFrameworks.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeGenericSystem.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeInitializeConfigs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeLanguageInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeRCCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeRCInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystem.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystemSpecificInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystemSpecificInitialize.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCXXCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCompilerCommon.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestRCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-C.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CompilerId\VS-10.vcxproj.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPackageHandleStandardArgs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPackageMessage.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPythonInterp.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPythonLibs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Internal\FeatureTesting.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-Determine-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC-C.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\WindowsPaths.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\SelectLibraryConfigurations.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeCCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeCXXCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeRCCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeSystem.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\feature_tests.cxx;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVConfig-version.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVConfig.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules-debug.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules-release.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"D:\Installed Programs (D Drive)\bin\cmake.exe" "-SF:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor" "-BF:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp" --check-stamp-file "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCCompilerABI.c;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCommonLanguageInclude.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCompilerIdDetection.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCXXCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompileFeatures.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompilerABI.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompilerId.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineRCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineSystem.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeFindBinUtils.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeFindFrameworks.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeGenericSystem.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeInitializeConfigs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeLanguageInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeRCCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeRCInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystem.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystemSpecificInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystemSpecificInitialize.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCXXCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCompilerCommon.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestRCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-C.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CompilerId\VS-10.vcxproj.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPackageHandleStandardArgs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPackageMessage.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPythonInterp.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPythonLibs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Internal\FeatureTesting.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-Determine-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC-C.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\WindowsPaths.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\SelectLibraryConfigurations.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeCCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeCXXCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeRCCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeSystem.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\feature_tests.cxx;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVConfig-version.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVConfig.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules-debug.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules-release.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"D:\Installed Programs (D Drive)\bin\cmake.exe" "-SF:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor" "-BF:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp" --check-stamp-file "F:/Github Repos/Real-time-MMD-Pose-Estimation/XNect/pose_extractor/build/tmp/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCCompilerABI.c;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCXXInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCommonLanguageInclude.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeCompilerIdDetection.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCXXCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompileFeatures.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompilerABI.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineCompilerId.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineRCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeDetermineSystem.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeFindBinUtils.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeFindFrameworks.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeGenericSystem.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeInitializeConfigs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeLanguageInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeRCCompiler.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeRCInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystem.cmake.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystemSpecificInformation.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeSystemSpecificInitialize.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCXXCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestCompilerCommon.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CMakeTestRCCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-C.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\CompilerId\VS-10.vcxproj.in;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPackageHandleStandardArgs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPackageMessage.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPythonInterp.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\FindPythonLibs.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Internal\FeatureTesting.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-Determine-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC-C.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows-MSVC.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\Windows.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\Platform\WindowsPaths.cmake;D:\Installed Programs (D Drive)\share\cmake-3.18\Modules\SelectLibraryConfigurations.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeCCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeCXXCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeRCCompiler.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\3.18.0\CMakeSystem.cmake;F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\feature_tests.cxx;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVConfig-version.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVConfig.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules-debug.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules-release.cmake;F:\OpenCV\opencv\build\x64\vc14\lib\OpenCVModules.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\wrapper.cpp" />
+    <ClInclude Include="F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src\extract_poses.hpp" />
+    <ClCompile Include="F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src\extract_poses.cpp" />
+    <ClInclude Include="F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src\human_pose.hpp" />
+    <ClCompile Include="F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src\human_pose.cpp" />
+    <ClInclude Include="F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src\peak.hpp" />
+    <ClCompile Include="F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\src\peak.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\Github Repos\Real-time-MMD-Pose-Estimation\XNect\pose_extractor\build\tmp\ZERO_CHECK.vcxproj">
+      <Project>{6672D3DE-989B-324B-BE8B-1D2425B8D959}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

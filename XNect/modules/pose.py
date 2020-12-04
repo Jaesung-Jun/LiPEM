@@ -11,6 +11,28 @@ class Pose:
                  'r_sho', 'r_elb', 'r_wri', 'r_hip', 'r_knee', 'r_ank',
                  'r_eye', 'l_eye',
                  'r_ear', 'l_ear']
+    """
+    0 : neck 
+    1 : nose
+    2 : core hip
+    3 : l_sho
+    4 : l_elb
+    5 : l_wri
+    6 : l_hip
+    7 : l_knee
+    8 : l_ank
+    9 : r_sho
+    10 : r_elb
+    11 : r_wri
+    12 : r_hip
+    13 : r_knee
+    14 : r_ank
+    15 : r_eye
+    16 : l_eye
+    17 : r_ear
+    18 : l_ear
+
+    """
     sigmas = np.array([.79, .26, .79, .72, .62, 1.07, .87, .89, .79, .72, .62, 1.07, .87, .89, .25, .25, .35, .35],
                       dtype=np.float32) / 10.0
     vars = (sigmas * 2) ** 2
